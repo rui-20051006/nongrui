@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>农蕊 · 个人简历</title>
+<meta name="description" content="农蕊的个人简历 — 经济学 / 音乐内容运营 / 新媒体与行业研究" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Noto+Serif+SC:wght@500;700&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+<div class="bg-fx"><div class="blob a"></div><div class="blob b"></div></div>
+
+<nav>
+  <a class="brand" href="index.html">农<span>·</span>蕊</a>
+  <div class="nav-links">
+    <a href="about.html">关于</a>
+    <a href="experience.html">经历</a>
+    <a href="research.html">科研</a>
+    <a href="student.html">学生工作</a>
+    <a href="works.html">技能与作品</a>
+  </div>
+</nav>
+
+<section class="hero" id="top">
+  <div class="avatar"><img src="assets/avatar.jpg" alt="农蕊头像" width="92" height="92" fetchpriority="high" decoding="async" /></div>
+  <div class="eyebrow">PERSONAL RESUME</div>
+  <h1>你好，我是 <span class="grad">农蕊</span></h1>
+  <p class="lead">中央民族大学经济学本科在读 · 音乐内容运营 / 新媒体运营 / 行业研究。在文化、传媒与音乐行业里，用数据和内容把"好作品为什么被看见"讲清楚。</p>
+  <div class="tags">
+    <span class="tag">经济学</span>
+    <span class="tag">音乐内容 / A&amp;R</span>
+    <span class="tag">新媒体运营</span>
+    <span class="tag">数据分析</span>
+    <span class="tag">行业研究</span>
+    <span class="tag">AI 内容生产</span>
+  </div>
+  <div class="cta">
+    <a class="btn primary" href="about.html">关于我</a>
+    <a class="btn ghost" href="works.html">技能与作品</a>
+  </div>
+</section>
+
+<div class="hub">
+  <div class="section-top">
+    <div>
+      <div class="eyebrow">INDEX</div>
+      <h2 class="section-title">内容导航</h2>
+    </div>
+    <p class="section-sub" style="margin:0;">五个板块，点开即看。</p>
+  </div>
+
+  <div class="hub-grid">
+    <a class="hub-card" href="about.html">
+      <div class="no">01</div>
+      <h3>关于我</h3>
+      <p>经济学本科在读，把经济学的框架感和内容运营的直觉结合起来，在文化与音乐行业做扎实的事。</p>
+      <div class="mini"><span>个人简介</span><span>主修课程</span><span>语言成绩</span><span>联系方式</span></div>
+    </a>
+    <a class="hub-card" href="experience.html">
+      <div class="no">02</div>
+      <h3>实习与项目经历</h3>
+      <p>从音乐企划到新媒体增长，覆盖内容从策划、发行到分发的完整链路。</p>
+      <div class="mini"><span>爱音时代</span><span>网易小蜜蜂</span><span>校园与文创</span></div>
+    </a>
+    <a class="hub-card" href="research.html">
+      <div class="no">03</div>
+      <h3>竞赛与科研实践</h3>
+      <p>推普实地调研、AIGC 短视频创作、非遗文旅创业、法律科技产品，以及县域发展数据库科研助理。</p>
+      <div class="mini"><span>4 项竞赛</span><span>科研助理</span><span>国家级 3 项</span></div>
+    </a>
+    <a class="hub-card" href="student.html">
+      <div class="no">04</div>
+      <h3>学生工作经历</h3>
+      <p>班长、学院生活权益部委员与预科部学生会部长，累计组织活动覆盖 500+ 人次。</p>
+      <div class="mini"><span>班长</span><span>生活权益部</span><span>活动 500+</span></div>
+    </a>
+    <a class="hub-card" href="works.html">
+      <div class="no">05</div>
+      <h3>技能与作品</h3>
+      <p>数据分析、新媒体运营、音乐企划与 A&amp;R、AI 内容生产、视频剪辑，以及游戏音乐企划实例。</p>
+      <div class="mini"><span>剪映</span><span>SQL</span><span>音乐企划</span></div>
+    </a>
+  </div>
+</div>
+
+<footer>© <span id="year"></span> 农蕊 · 个人简历 · Built with care</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        e.target.querySelectorAll('.bar i').forEach(b => b.style.width = b.dataset.w + '%');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

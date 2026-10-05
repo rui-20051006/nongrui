@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>学生工作经历 · 农蕊</title>
+<meta name="description" content="农蕊的学生工作经历 — 班长、经济学院生活权益部委员、预科教育学院学生会生活权益部部长" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Noto+Serif+SC:wght@500;700&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+<div class="bg-fx"><div class="blob a"></div><div class="blob b"></div></div>
+
+<nav>
+  <a class="brand" href="index.html">农<span>·</span>蕊</a>
+  <div class="nav-links">
+    <a href="about.html">关于</a>
+    <a href="experience.html">经历</a>
+    <a href="research.html">科研</a>
+    <a href="student.html" class="active">学生工作</a>
+    <a href="works.html">技能与作品</a>
+  </div>
+</nav>
+
+<section class="inner reveal">
+  <a class="back-home" href="index.html">← 返回主界面</a>
+  <div class="eyebrow">STUDENT ROLES</div>
+  <h2 class="section-title">学生工作经历</h2>
+  <p class="section-sub">在校期间的学生组织与班级服务经历。</p>
+
+  <div class="timeline">
+    <div class="item">
+      <div class="meta">2024.10 — 2025.06</div>
+      <h3>中央民族大学预科教育学院（少数民族预科班）学生会 · 生活权益部部长</h3>
+      <div class="org">学生会干部</div>
+      <ul>
+        <li>牵头开展 2 场线下活动，单场规模超 150 人，统筹场地、流程与人员分工；</li>
+        <li>组织部门招新与面试，累计面试超 50 人，建立干事培养与考核机制。</li>
+      </ul>
+      <div class="pill-row"><span class="pill">活动策划</span><span class="pill">150+ 人</span><span class="pill">面试 50+</span></div>
+    </div>
+    <div class="item">
+      <div class="meta">2025.09 — 至今</div>
+      <h3>中央民族大学 25 级经济 5 班 · 班长</h3>
+      <div class="org">班级事务</div>
+      <ul>
+        <li>定期组织召开班会活动，围绕学业规划、考公考研、班级建设与权益反馈等主题，提升班级凝聚力；</li>
+        <li>作为学院与同学之间的桥梁，及时准确转达通知、政策与评奖评优安排，确保信息触达全班、无遗漏；</li>
+        <li>协助辅导员完成日常事务管理、信息采集与困难同学帮扶，推动班级日常运转高效有序。</li>
+      </ul>
+      <div class="pill-row"><span class="pill">班会组织</span><span class="pill">通知转达</span><span class="pill">班级建设</span></div>
+    </div>
+    <div class="item">
+      <div class="meta">2025.09 — 至今</div>
+      <h3>中央民族大学经济学院 · 生活权益部委员</h3>
+      <div class="org">学院学生会</div>
+      <ul>
+        <li>组织策划 3 场主题活动，单场规模超 300 人，覆盖权益科普、生活服务与心理关怀；</li>
+        <li>负责部门招新与面试统筹，累计面试超 150 人，优化选拔标准与培训流程。</li>
+      </ul>
+      <div class="pill-row"><span class="pill">主题活动</span><span class="pill">300+ 人</span><span class="pill">面试 150+</span></div>
+    </div>
+  </div>
+</section>
+
+<footer>© <span id="year"></span> 农蕊 · 个人简历</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        e.target.querySelectorAll('.bar i').forEach(b => b.style.width = b.dataset.w + '%');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

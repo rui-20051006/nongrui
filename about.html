@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>关于我 · 农蕊</title>
+<meta name="description" content="农蕊 — 中央民族大学经济学本科在读，主修课程、GPA、荣誉奖项、语言成绩与联系方式" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Noto+Serif+SC:wght@500;700&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+<div class="bg-fx"><div class="blob a"></div><div class="blob b"></div></div>
+
+<nav>
+  <a class="brand" href="index.html">农<span>·</span>蕊</a>
+  <div class="nav-links">
+    <a href="about.html" class="active">关于</a>
+    <a href="experience.html">经历</a>
+    <a href="research.html">科研</a>
+    <a href="student.html">学生工作</a>
+    <a href="works.html">技能与作品</a>
+  </div>
+</nav>
+
+<section class="inner reveal">
+  <a class="back-home" href="index.html">← 返回主界面</a>
+  <div class="eyebrow">ABOUT</div>
+  <h2 class="section-title">关于我</h2>
+  <p class="section-sub">我是谁、在读什么、做过什么、怎么找到我。</p>
+
+  <div class="about-grid">
+    <div>
+      <p>我是农蕊，中央民族大学经济学专业本科在读，现居北京。目前在<strong>北京爱音时代音乐文化发展有限公司</strong>做音乐内容运营，参与 A&amp;R、艺人歌曲在网易云音乐的发行企划与宣推；此前在<strong>网易小蜜蜂</strong>负责新媒体运营，用数据驱动内容策略。</p>
+      <p>日常围绕三件事：① 用数据和 AB 测试优化内容；② 把音乐需求落成可执行的企划与宣发方案；③ 用 AI 工具搭建可复用的内容生产工作流。喜欢把模糊的"感觉"翻译成可验证的动作。</p>
+    </div>
+    <div class="stat-card">
+      <div class="stat"><span class="k">学校</span><span class="v">中央民族大学（985）</span></div>
+      <div class="stat"><span class="k">专业</span><span class="v">经济学（本科 · 2025.09 入学）</span></div>
+      <div class="stat"><span class="k">GPA</span><span class="v">3.75 / 5（排名 30 / 320）</span></div>
+      <div class="stat"><span class="k">主修课程</span><span class="v">微观经济学、宏观经济学、金融学、财政学、国际经济学</span></div>
+      <div class="stat"><span class="k">荣誉</span><span class="v">专业二等奖学金 · 优秀学生干部</span></div>
+      <div class="stat"><span class="k">语言</span><span class="v">CET-4 590 · CET-6 512</span></div>
+      <div class="stat"><span class="k">所在地</span><span class="v">北京 · 海淀</span></div>
+    </div>
+  </div>
+
+  <h3 class="block-title">联系方式</h3>
+  <div class="links">
+    <a class="btn primary" href="mailto:1519262772@qq.com">邮箱</a>
+    <a class="btn ghost" href="tel:19977089985">手机</a>
+    <a class="btn ghost" href="https://github.com/rui-20051006">GitHub</a>
+  </div>
+  <div class="line">邮箱：1519262772@qq.com ｜ 手机：19977089985 ｜ 现居：北京市海淀区</div>
+</section>
+
+<footer>© <span id="year"></span> 农蕊 · 个人简历</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        e.target.querySelectorAll('.bar i').forEach(b => b.style.width = b.dataset.w + '%');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

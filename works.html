@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>技能与作品 · 农蕊</title>
+<meta name="description" content="农蕊的技能（数据分析、新媒体运营、音乐企划、AI 内容生产、视频剪辑剪映）与音乐企划作品" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Noto+Serif+SC:wght@500;700&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+<div class="bg-fx"><div class="blob a"></div><div class="blob b"></div></div>
+
+<nav>
+  <a class="brand" href="index.html">农<span>·</span>蕊</a>
+  <div class="nav-links">
+    <a href="about.html">关于</a>
+    <a href="experience.html">经历</a>
+    <a href="research.html">科研</a>
+    <a href="student.html">学生工作</a>
+    <a href="works.html" class="active">技能与作品</a>
+  </div>
+</nav>
+
+<section class="inner reveal">
+  <a class="back-home" href="index.html">← 返回主界面</a>
+  <div class="eyebrow">SKILLS &amp; WORKS</div>
+  <h2 class="section-title">技能与作品</h2>
+  <p class="section-sub">会什么、用什么工具做，以及实际产出的内容。</p>
+
+  <div class="skill-grid">
+    <div class="skill"><div class="top"><b>新媒体 / 内容运营</b><span>90%</span></div><div class="bar"><i data-w="90"></i></div></div>
+    <div class="skill"><div class="top"><b>数据分析（Excel / SQL）</b><span>88%</span></div><div class="bar"><i data-w="88"></i></div></div>
+    <div class="skill"><div class="top"><b>音乐企划 / A&amp;R</b><span>82%</span></div><div class="bar"><i data-w="82"></i></div></div>
+    <div class="skill"><div class="top"><b>AI 内容生产（即梦 / Sora / Claude Code）</b><span>80%</span></div><div class="bar"><i data-w="80"></i></div></div>
+    <div class="skill"><div class="top"><b>视频剪辑（剪映 / Premiere）</b><span>78%</span></div><div class="bar"><i data-w="78"></i></div></div>
+  </div>
+
+  <div class="pill-row" style="margin-top:26px;">
+    <span class="pill">Excel · SQL · Word</span>
+    <span class="pill">剪映 · Premiere</span>
+    <span class="pill">蝉妈妈 · 千瓜 · 灰豚数据</span>
+    <span class="pill">可画 · ima · 即梦 AI</span>
+    <span class="pill">Claude Code · WorkBuddy</span>
+  </div>
+
+  <h3 class="block-title">音乐企划作品（节选）</h3>
+  <div class="proj-grid">
+    <div class="proj">
+      <h3>《白银之城》角色曲音乐企划</h3>
+      <p>为游戏角色打造主题曲企划，含风格定位、参考曲目与宣发方案，串联角色叙事与音乐表达。</p>
+      <span class="pill">游戏音乐企划</span>
+    </div>
+    <div class="proj">
+      <h3>永劫无间 Mike「一刀振江湖」音乐企划</h3>
+      <p>围绕游戏赛事 / 英雄角色的英雄主题音乐企划，匹配受众偏好与传播节奏。</p>
+      <span class="pill">游戏音乐企划</span>
+    </div>
+    <div class="proj">
+      <h3>《向山河》原创红色主题歌曲企划</h3>
+      <p>主旋律原创歌曲的全链路企划，从立意、词曲方向到宣发落地的完整方案。</p>
+      <span class="pill">主旋律企划</span>
+    </div>
+    <div class="proj">
+      <h3>音乐企划与 AI 视频制作 SOP</h3>
+      <p>搭建"音乐企划 + AI 视频"标准化生产流程，用 Agent 工具稳定产出可用于传播的宣推内容。</p>
+      <span class="pill">AI 工作流</span>
+    </div>
+  </div>
+</section>
+
+<footer>© <span id="year"></span> 农蕊 · 个人简历</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        e.target.querySelectorAll('.bar i').forEach(b => b.style.width = b.dataset.w + '%');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
