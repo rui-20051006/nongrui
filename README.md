@@ -31,6 +31,22 @@ README.md
 
 配色变量集中在 `assets/style.css` 的 `:root` 中（主色 `--accent: #6f93b4`，点缀色 `--accent-2: #a87f93`），改配色只动这一处即可全站生效。
 
+## 线上访问
+
+**https://rui-20051006.github.io/nongrui/**
+
 ## 部署到 GitHub Pages
 
-仓库 **Settings → Pages** 中选择 `Deploy from a branch`、分支 `main`、目录 `/(root)`，保存后约 1 分钟生效。
+仓库（<https://github.com/rui-20051006/nongrui>）**Settings → Pages** 中选择 `Deploy from a branch`、分支 `main`、目录 `/(root)`，保存后约 1 分钟生效。
+
+### 更新线上内容
+
+- 在本目录提交后推送到 `origin`（即 `rui-20051006/nongrui`）：
+
+```bash
+git add -A && git commit -m "更新内容" && git push origin main
+```
+
+- 或让我把改动推上去：提供仓库的 fine-grained PAT（权限 `Contents: Read and write`）后，可直接调用 GitHub API 推送，无需本地 Git 凭据。
+
+> 注意：旧仓库 `nongrui-resume` 的 GitHub Pages 已关闭，旧链接 `rui-20051006.github.io/nongrui-resume/` 已 404。仓库仍在，可自行删除或转私有。
